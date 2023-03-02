@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       getPages: AppRoutes.appRoutes(),
+      // home: const LoginView(),
     );
   }
 }

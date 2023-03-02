@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:mvvm/res/component/internet_exception_widget.dart';
-
-import '../res/component/gernal_exception.dart';
-import '../res/component/round_button.dart';
-import '../res/image/image.dart';
+import 'package:get/get.dart';
+import 'package:mvvm/view_model/services/splash_services.dart';
+import '../res/Color/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,25 +11,28 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  SplashServices services = SplashServices();
+  @override
+  void initState() {
+    super.initState();
+    services.isLogin();
+  }
+
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
-
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Splash"),
-        centerTitle: true,
-      ),
-      body: Column(children: [
-        GernalException(
-          onPress: () {},
+      backgroundColor: AppColor.grayColor,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text('wellcome_back'.tr,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 20))
+          ],
         ),
-        RoundButton(
-          onPres: () {},
-          title: "button",
-          width: 200,
-        )
-      ]),
+      ),
     );
   }
 }

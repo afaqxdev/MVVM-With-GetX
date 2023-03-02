@@ -8,7 +8,9 @@ class Languages extends Translations {
           'internet_exception':
               'We are enable to connect \nwith internet please check\n your internet.',
           'gernal_exception':
-              'We are enable to process your request.\n Please try again'
+              'We are enable to process your request.\n Please try again',
+          'wellcome_back': 'Wellcome \n back!',
+          'login': 'Login',
         },
         'ur_PK': {'email_hint': "ای میل درج کریں"}
       };
