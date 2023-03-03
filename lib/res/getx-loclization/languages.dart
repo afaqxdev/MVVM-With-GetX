@@ -11,6 +11,8 @@ class Languages extends Translations {
               'We are enable to process your request.\n Please try again',
           'wellcome_back': 'Wellcome \n back!',
           'login': 'Login',
+          "hint_email": ' Email',
+          'hint_password': "Password",
         },
         'ur_PK': {'email_hint': "ای میل درج کریں"}
       };

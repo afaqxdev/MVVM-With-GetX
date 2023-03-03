@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       getPages: AppRoutes.appRoutes(),
       // home: const LoginView(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

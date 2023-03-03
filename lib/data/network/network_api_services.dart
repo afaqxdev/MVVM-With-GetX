@@ -35,7 +35,7 @@ class NetworkApiServices extends BaseApiServices {
     dynamic responseJson;
     try {
       final response = await http
-          .post(Uri.parse(url), body: jsonEncode(data))
+          .post(Uri.parse(url), body: data)
           .timeout(const Duration(seconds: 10));
 
       responseJson = returnResponse(response);
@@ -53,7 +53,9 @@ class NetworkApiServices extends BaseApiServices {
         dynamic respnoseJson = jsonDecode(response.body);
         return respnoseJson;
       case 400:
-        throw InvalidUrl;
+        dynamic respnoseJson = jsonDecode(response.body);
+        return respnoseJson;
+
       default:
         throw FetchDataException(
             'Error while Communication with server${response.statusCode}');
