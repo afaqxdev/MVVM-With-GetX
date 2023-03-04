@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:mvvm/res/routes/routes_name.dart';
 import 'package:mvvm/view/home/home_view.dart';
 import 'package:mvvm/view/login/login_view.dart';
-import 'package:mvvm/view/splash_screen.dart';
+import 'package:mvvm/view/splash_screen/splash_screen.dart';
 
 class AppRoutes {
   static appRoutes() => [

@@ -5,8 +5,11 @@ import 'package:get/get.dart';
 import 'package:mvvm/res/color/app_colors.dart';
 import 'package:mvvm/res/component/round_button.dart';
 import 'package:mvvm/utils/utils.dart';
+import 'package:mvvm/view/login/widget/input_email_field/email_field.dart';
+import 'package:mvvm/view/login/widget/input_password_field/password_field.dart';
 
 import '../../view_model/controller/Login/login_view_model.dart';
+import 'widget/login_button/login_button.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -37,65 +40,15 @@ class _LoginViewState extends State<LoginView> {
                 key: _formkey,
                 child: Column(
                   children: [
-                    TextFormField(
-                      controller: logControler.emailcontroler.value,
-                      focusNode: logControler.emailFocusNode.value,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          uitls.snackBar("Please enter Email", "Email");
-                        }
-                        return null;
-                      },
-                      onFieldSubmitted: (value) {
-                        uitls.fieldFocusChange(
-                            context,
-                            logControler.emailFocusNode.value,
-                            logControler.passwordFocusNode.value);
-                      },
-                      decoration: InputDecoration(
-                          hintText: 'hint_email'.tr,
-                          border: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: AppColor.greenColor))),
-                    ),
+                    InputEmailField(),
                     20.ph,
-                    TextFormField(
-                      controller: logControler.passwordcontroler.value,
-                      focusNode: logControler.passwordFocusNode.value,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          uitls.snackBar("Please enter Email", "Email");
-                        }
-                        return null;
-                      },
-                      obscureText: true,
-                      obscuringCharacter: '*',
-                      decoration: InputDecoration(
-                          hintText: 'hint_password'.tr,
-                          border: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: AppColor.greenColor))),
-                    ),
+                    InputPasswordField(),
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 40,
-              ),
-              Obx(
-                () {
-                  return RoundButton(
-                      width: 200,
-                      title: "Login",
-                      loading: logControler.loding.value,
-                      onPres: () {
-                        if (_formkey.currentState!.validate()) {
-                          logControler.loginApi();
-                          logControler.emailcontroler.value.clear();
-                          logControler.passwordcontroler.value.clear();
-                        }
-                      });
-                },
+              40.ph,
+              LoginButton(
+                formkey: _formkey,
               )
             ]),
       ),

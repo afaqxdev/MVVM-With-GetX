@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mvvm/data/response/login_repository/login_repository.dart';
+import 'package:mvvm/repository/login_repository/login_repository.dart';
 import 'package:mvvm/model/login_model/userModel.dart';
 import 'package:mvvm/utils/utils.dart';
 
@@ -31,7 +31,8 @@ class LoginViewModel extends GetxController {
       {
         UserModel userModel = UserModel(token: value['token'], isLogin: true);
         userpreference.saveUser(userModel).then((value) {
-          Get.toNamed(RoutesNAme.HomeView);
+          Get.delete<LoginViewModel>();
+          Get.toNamed(RoutesNAme.HomeView)!.then((value) {});
         }).onError((error, stackTrace) {});
         uitls.snackBar("Login Successfully", "Login");
       }

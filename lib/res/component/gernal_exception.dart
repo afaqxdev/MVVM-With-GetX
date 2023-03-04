@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvvm/res/color/app_colors.dart';
 
-class GernalException extends StatefulWidget {
+class GeneralException extends StatefulWidget {
   final VoidCallback onPress;
-  const GernalException({required this.onPress, super.key});
+  const GeneralException({required this.onPress, super.key});
 
   @override
-  State<GernalException> createState() => _GernalExceptionState();
+  State<GeneralException> createState() => _GeneralExceptionState();
 }
 
-class _GernalExceptionState extends State<GernalException> {
+class _GeneralExceptionState extends State<GeneralException> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
