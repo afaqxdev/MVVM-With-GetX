@@ -1,12 +1,12 @@
+// ignore_for_file: unnecessary_import
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:mvvm/res/color/app_colors.dart';
 import 'package:mvvm/res/component/round_button.dart';
 import 'package:mvvm/utils/utils.dart';
 
-import '../../view_model/controller/login_view_model.dart';
+import '../../view_model/controller/Login/login_view_model.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -91,6 +91,8 @@ class _LoginViewState extends State<LoginView> {
                       onPres: () {
                         if (_formkey.currentState!.validate()) {
                           logControler.loginApi();
+                          logControler.emailcontroler.value.clear();
+                          logControler.passwordcontroler.value.clear();
                         }
                       });
                 },
@@ -105,6 +107,7 @@ extension on num {
   SizedBox get ph => SizedBox(
         height: toDouble(),
       );
+  // ignore: unused_element
   SizedBox get pw => SizedBox(
         height: toDouble(),
       );

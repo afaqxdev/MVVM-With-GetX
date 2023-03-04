@@ -1,9 +1,8 @@
-import 'package:mvvm/view/login/login_view.dart';
+// ignore_for_file: constant_identifier_names
 
 class RoutesNAme {
-  // ignore: constant_identifier_names
   static const SplashScreen = '/';
 
-  // ignore: constant_identifier_names
   static const LoginView = '/login_view';
+  static const HomeView = '/home_view';
 }

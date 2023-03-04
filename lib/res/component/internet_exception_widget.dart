@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get.dart';
 import 'package:mvvm/res/color/app_colors.dart';
 
 class InternetExceptionWidget extends StatefulWidget {

@@ -3,6 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:mvvm/res/Color/app_colors.dart';
 
+// ignore: camel_case_types
 class uitls {
   static void fieldFocusChange(
       BuildContext context, FocusNode current, FocusNode nextFcous) {
